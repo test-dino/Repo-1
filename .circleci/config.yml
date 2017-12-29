@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: debian:stretch
+    steps:
+      - checkout
+      - run:
+          name: Greeting
+          command: echo Hello, world.
+      - run:
+          name: Print the Current Time
+          command: date
+notify:
+   webhooks:
+     - url: https://hooks-glpapiaws.dev.glip.net/webhook/39e6e25c-7893-4a8d-ba43-5f77184dcebc
